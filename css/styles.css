@@ -422,10 +422,27 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ---- Testimonials ---- */
 .testimonials { background: var(--light); }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.testimonials-slider-wrapper {
+  overflow: hidden;
+  padding: 8px 0 24px;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.testimonials-track {
+  display: flex;
   gap: 28px;
+  width: max-content;
+  animation: testimonials-scroll 48s linear infinite;
+}
+
+.testimonials-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes testimonials-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .testimonial-card {
@@ -437,15 +454,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 340px;
+  flex-shrink: 0;
 }
 
 .stars { color: #f59e0b; font-size: 1.1rem; letter-spacing: 2px; }
 
 .testimonial-card p {
   color: var(--text);
-  font-size: 0.975rem;
+  font-size: 0.95rem;
   flex: 1;
   font-style: italic;
+  line-height: 1.65;
 }
 
 .reviewer {
@@ -455,17 +475,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .avatar {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: var(--white);
-  font-weight: 700;
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
   flex-shrink: 0;
+  border: 2px solid var(--border);
 }
 
 .reviewer strong { font-size: 0.925rem; color: var(--dark); }
@@ -664,7 +679,7 @@ textarea { resize: vertical; }
 
   .services-grid { grid-template-columns: 1fr; }
 
-  .testimonials-grid { grid-template-columns: 1fr; }
+
 
   .form-row { grid-template-columns: 1fr; }
 
