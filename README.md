@@ -15,6 +15,11 @@ via the workflow at `.github/workflows/deploy.yml`.
 2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
 3. Save. The next push to `main` will publish the site live.
 
+> **No custom domain required.** The site is served for free at
+> `https://xiaohuahou08.github.io/CleanningSvc/`. A custom domain is
+> entirely optional – if you want one you can add it under **Settings → Pages → Custom domain**,
+> but the site works perfectly without it.
+
 ## Project structure
 
 ```
