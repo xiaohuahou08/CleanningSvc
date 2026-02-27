@@ -10,9 +10,9 @@
    Template variables used: from_name, from_email, phone, address,
    service_type, preferred_date, preferred_time, size, frequency, notes.
 */
-var EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'abc123XYZ'
-var EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_xxxxxxx'
-var EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xxxxxxx'
+var EMAILJS_PUBLIC_KEY  = 'sbYh5z7wSyFlh87ye';
+var EMAILJS_SERVICE_ID  = 'service_jelcpx6';
+var EMAILJS_TEMPLATE_ID = 'template_imled2u';
 
 (function () {
   'use strict';
