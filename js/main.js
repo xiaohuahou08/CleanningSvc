@@ -2,8 +2,27 @@
    Sparkling Clean NYC – Main JS
    ========================================= */
 
+/* ---- EmailJS Configuration ----
+   Sign up at https://www.emailjs.com, create a Gmail service connected to
+   xiaohua.hou@gmail.com, and create an email template. In the template, set
+   the "To Email" field to xiaohua.hou@gmail.com (server-side, NOT via a
+   template variable). Then fill in the three values below.
+   Template variables used: from_name, from_email, phone, address,
+   service_type, preferred_date, preferred_time, size, frequency, notes.
+*/
+var EMAILJS_PUBLIC_KEY  = 'sbYh5z7wSyFlh87ye';
+var EMAILJS_SERVICE_ID  = 'service_jelcpx6';
+var EMAILJS_TEMPLATE_ID = 'template_imled2u';
+
 (function () {
   'use strict';
+
+  // Initialise EmailJS with the public key
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  } else {
+    console.warn('EmailJS failed to load. Booking emails will not be sent.');
+  }
 
   /* ---- Mobile Nav ---- */
   var hamburger = document.getElementById('hamburger');
@@ -123,15 +142,30 @@
   }
 
   /**
-   * Simulate an async booking submission (replace with real API call).
-   * Resolves after a short delay to mimic network latency.
+   * Send booking data to xiaohua.hou@gmail.com via EmailJS.
+   * NOTE: Configure the recipient address (xiaohua.hou@gmail.com) inside the
+   * EmailJS template on the dashboard – do NOT pass it as a template variable
+   * to prevent client-side manipulation of the destination address.
+   * @param {Object} data - Collected form data
+   * @returns {Promise}
    */
   function submitBooking(data) {
-    return new Promise(function (resolve) {
-      // TODO: Replace with fetch('/api/bookings', { method:'POST', body: JSON.stringify(data) })
-      console.log('Booking data submitted:', data);
-      setTimeout(resolve, 1200);
-    });
+    if (typeof emailjs === 'undefined') {
+      return Promise.reject(new Error('EmailJS is not available. Please check your internet connection and try again.'));
+    }
+    var templateParams = {
+      from_name:      data.firstName + ' ' + data.lastName,
+      from_email:     data.email,
+      phone:          data.phone,
+      address:        data.address,
+      service_type:   data.serviceType,
+      preferred_date: data.date,
+      preferred_time: data.time,
+      size:           data.size || 'Not specified',
+      frequency:      data.frequency || 'Not specified',
+      notes:          data.notes || 'None'
+    };
+    return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
   }
 
   form.addEventListener('submit', function (event) {
