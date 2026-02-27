@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--
+  =====================================================================
+  EMAILJS BOOKING NOTIFICATION TEMPLATE
+  =====================================================================
+  Paste the content below into your EmailJS template editor:
+
+  1. Go to https://dashboard.emailjs.com → Email Templates → Create New Template
+  2. Set these header fields in the EmailJS editor:
+       To Email : xiaohua.hou@gmail.com          (type the address directly)
+       From Name: {{from_name}}
+       Subject  : New Booking Request – {{from_name}}
+       Reply To : {{from_email}}
+  3. Switch the Content tab to HTML and paste everything inside <body>…</body>
+     (or paste the full document if the editor accepts it).
+  =====================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Booking Request – {{from_name}}</title>
+  <style>
+    /* Reset */
+    body, table, td, p, a { margin: 0; padding: 0; }
+    body {
+      background-color: #f4f6f9;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      color: #333333;
+      -webkit-text-size-adjust: 100%;
+    }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0"
+         style="background-color:#f4f6f9; padding: 32px 0;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" border="0"
+               style="max-width:600px; width:100%; border-radius:8px;
+                      overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,.10);">
+
+          <!-- ── HEADER ── -->
+          <tr>
+            <td style="background-color:#1e3a5f; padding: 28px 32px; text-align:center;">
+              <p style="font-size:22px; font-weight:700; color:#ffffff;
+                        letter-spacing:.5px; margin:0;">
+                ✨ Sparkling Clean NYC
+              </p>
+              <p style="font-size:13px; color:#a8c4e0; margin:6px 0 0;">
+                New Booking Request Received
+              </p>
+            </td>
+          </tr>
+
+          <!-- ── BODY ── -->
+          <tr>
+            <td style="background-color:#ffffff; padding: 32px 32px 24px;">
+
+              <!-- Greeting -->
+              <p style="font-size:16px; margin-bottom:20px;">
+                Hi Xiaohua,<br /><br />
+                A new cleaning booking request has been submitted via the website.
+                Here are the details:
+              </p>
+
+              <!-- ── CUSTOMER INFO ── -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                     style="margin-bottom:24px;">
+                <tr>
+                  <td colspan="2"
+                      style="background-color:#1e3a5f; color:#ffffff;
+                             font-size:12px; font-weight:700; letter-spacing:.8px;
+                             text-transform:uppercase; padding:8px 12px;
+                             border-radius:4px 4px 0 0;">
+                    Customer Information
+                  </td>
+                </tr>
+                <tr>
+                  <td style="width:40%; background-color:#f8fafc;
+                             border:1px solid #e2e8f0; border-top:none;
+                             padding:10px 12px; font-weight:600; color:#475569;">
+                    Name
+                  </td>
+                  <td style="background-color:#ffffff;
+                             border:1px solid #e2e8f0; border-top:none;
+                             border-left:none; padding:10px 12px;">
+                    {{from_name}}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#f8fafc;
+                             border:1px solid #e2e8f0; border-top:none;
+                             padding:10px 12px; font-weight:600; color:#475569;">
+                    Email
+                  </td>
+                  <td style="background-color:#ffffff;
+                             border:1px solid #e2e8f0; border-top:none;
+                             border-left:none; padding:10px 12px;">
+                    <a href="mailto:{{from_email}}">{{from_email}}</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#f8fafc;
+                             border:1px solid #e2e8f0; border-top:none;
+                             padding:10px 12px; font-weight:600; color:#475569;">
+                    Phone
+                  </td>
+                  <td style="background-color:#ffffff;
+                             border:1px solid #e2e8f0; border-top:none;
+                             border-left:none; padding:10px 12px;">
+                    <a href="tel:{{phone}}">{{phone}}</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#f8fafc;
+                             border:1px solid #e2e8f0; border-top:none;
+                             border-radius:0 0 0 4px;
+                             padding:10px 12px; font-weight:600; color:#475569;">
+                    Address
+                  </td>
+                  <td style="background-color:#ffffff;
+                             border:1px solid #e2e8f0; border-top:none;
+                             border-left:none; border-radius:0 0 4px 0;
+                             padding:10px 12px;">
+                    {{address}}
+                  </td>
+                </tr>
+              </table>
+
+              <!-- ── BOOKING DETAILS ── -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                     style="margin-bottom:24px;">
+                <tr>
+                  <td colspan="2"
+                      style="background-color:#0f766e; color:#ffffff;
+                             font-size:12px; font-weight:700; letter-spacing:.8px;
+                             text-transform:uppercase; padding:8px 12px;
+                             border-radius:4px 4px 0 0;">
+                    Booking Details
+                  </td>
+                </tr>
+                <tr>
+                  <td style="width:40%; background-color:#f0fdfa;
+                             border:1px solid #e2e8f0; border-top:none;
+                             padding:10px 12px; font-weight:600; color:#475569;">
+                    Service Type
+                  </td>
+                  <td style="background-color:#ffffff;
+                             border:1px solid #e2e8f0; border-top:none;
+                             border-left:none; padding:10px 12px;">
+                    {{service_type}}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#f0fdfa;
+                             border:1px solid #e2e8f0; border-top:none;
+                             padding:10px 12px; font-weight:600; color:#475569;">
+                    Preferred Date
+                  </td>
+                  <td style="background-color:#ffffff;
+                             border:1px solid #e2e8f0; border-top:none;
+                             border-left:none; padding:10px 12px;">
+                    {{preferred_date}}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#f0fdfa;
+                             border:1px solid #e2e8f0; border-top:none;
+                             padding:10px 12px; font-weight:600; color:#475569;">
+                    Preferred Time
+                  </td>
+                  <td style="background-color:#ffffff;
+                             border:1px solid #e2e8f0; border-top:none;
+                             border-left:none; padding:10px 12px;">
+                    {{preferred_time}}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#f0fdfa;
+                             border:1px solid #e2e8f0; border-top:none;
+                             padding:10px 12px; font-weight:600; color:#475569;">
+                    Space Size
+                  </td>
+                  <td style="background-color:#ffffff;
+                             border:1px solid #e2e8f0; border-top:none;
+                             border-left:none; padding:10px 12px;">
+                    {{size}}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#f0fdfa;
+                             border:1px solid #e2e8f0; border-top:none;
+                             border-radius:0 0 0 4px;
+                             padding:10px 12px; font-weight:600; color:#475569;">
+                    Frequency
+                  </td>
+                  <td style="background-color:#ffffff;
+                             border:1px solid #e2e8f0; border-top:none;
+                             border-left:none; border-radius:0 0 4px 0;
+                             padding:10px 12px;">
+                    {{frequency}}
+                  </td>
+                </tr>
+              </table>
+
+              <!-- ── SPECIAL NOTES ── -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                     style="margin-bottom:28px;">
+                <tr>
+                  <td style="background-color:#78350f; color:#ffffff;
+                             font-size:12px; font-weight:700; letter-spacing:.8px;
+                             text-transform:uppercase; padding:8px 12px;
+                             border-radius:4px 4px 0 0;">
+                    Special Instructions / Notes
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#fffbeb;
+                             border:1px solid #e2e8f0; border-top:none;
+                             border-radius:0 0 4px 4px;
+                             padding:12px 12px; line-height:1.6; color:#444;">
+                    {{notes}}
+                  </td>
+                </tr>
+              </table>
+
+              <!-- ── CALL TO ACTION ── -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" style="padding: 8px 0 16px;">
+                    <a href="mailto:{{from_email}}?subject=Re: Your Booking Request"
+                       style="display:inline-block; background-color:#1e3a5f;
+                              color:#ffffff; font-size:14px; font-weight:600;
+                              padding:12px 28px; border-radius:6px;
+                              text-decoration:none; letter-spacing:.3px;">
+                      Reply to {{from_name}}
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- ── FOOTER ── -->
+          <tr>
+            <td style="background-color:#f1f5f9; padding: 20px 32px;
+                       text-align:center; border-top:1px solid #e2e8f0;">
+              <p style="font-size:12px; color:#94a3b8; margin:0;">
+                ✨ Sparkling Clean NYC &nbsp;·&nbsp;
+                <a href="tel:+12125550100" style="color:#94a3b8;">(212) 555-0100</a>
+                &nbsp;·&nbsp;
+                <a href="mailto:hello@sparklingcleannyc.com" style="color:#94a3b8;">
+                  hello@sparklingcleannyc.com
+                </a>
+              </p>
+              <p style="font-size:11px; color:#cbd5e1; margin:6px 0 0;">
+                This notification was automatically generated when a customer
+                submitted the booking form at sparklingcleannyc.com.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
