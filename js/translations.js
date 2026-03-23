@@ -4,6 +4,10 @@
 
 var translations = {
   en: {
+    meta: {
+      title: "Sparkling Clean NYC | Manhattan Cleaning Service",
+      description: "Sparkling Clean NYC – Professional residential and commercial cleaning services in Manhattan, New York. Book online today!"
+    },
     nav: {
       services: "Services",
       pricing: "Pricing",
@@ -191,6 +195,10 @@ var translations = {
     }
   },
   es: {
+    meta: {
+      title: "Sparkling Clean NYC | Servicio de Limpieza en Manhattan",
+      description: "Sparkling Clean NYC – Servicios profesionales de limpieza residencial y comercial en Manhattan, Nueva York. ¡Reserve en línea hoy!"
+    },
     nav: {
       services: "Servicios",
       pricing: "Precios",

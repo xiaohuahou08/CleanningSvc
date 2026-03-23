@@ -30,6 +30,19 @@ var EMAILJS_TEMPLATE_ID = 'template_imled2u';
   function updatePageLanguage() {
     var t = translations[currentLang];
 
+    // Update page title
+    if (t.meta && t.meta.title) {
+      document.title = t.meta.title;
+    }
+
+    // Update meta description
+    if (t.meta && t.meta.description) {
+      var metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute('content', t.meta.description);
+      }
+    }
+
     // Update all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(function(el) {
       var key = el.getAttribute('data-i18n');
