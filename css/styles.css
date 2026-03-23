@@ -171,6 +171,33 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .nav-links a:hover { color: var(--primary); }
 
+.lang-switcher {
+  margin-left: 8px;
+}
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 32px;
+  padding: 6px 10px;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
