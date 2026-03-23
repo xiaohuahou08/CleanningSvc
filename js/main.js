@@ -1,5 +1,5 @@
 /* =========================================
-   Sparkling Clean NYC – Main JS
+   Sparkling Clean NYC – Main JS (with Pricing Calculator)
    ========================================= */
 
 /* ---- EmailJS Configuration ----
@@ -209,5 +209,39 @@ var EMAILJS_TEMPLATE_ID = 'template_imled2u';
       form.querySelector('button[type="submit"]').disabled = false;
     });
   });
+
+  /* ---- Pricing Calculator ---- */
+  (function() {
+    var serviceSelect = document.getElementById('calc-service');
+    var sizeSelect = document.getElementById('calc-size');
+    var frequencySelect = document.getElementById('calc-frequency');
+    var amountEl = document.getElementById('calc-amount');
+    var noteEl = document.getElementById('calc-note');
+
+    function calculatePrice() {
+      if (!serviceSelect || !sizeSelect || !frequencySelect) return;
+
+      var pricePerHour = parseFloat(serviceSelect.options[serviceSelect.selectedIndex].getAttribute('data-price')) || 0;
+      var hours = parseFloat(sizeSelect.options[sizeSelect.selectedIndex].getAttribute('data-hours')) || 0;
+      var discount = parseFloat(frequencySelect.options[frequencySelect.selectedIndex].getAttribute('data-discount')) || 0;
+
+      var subtotal = pricePerHour * hours;
+      var discountAmount = subtotal * (discount / 100);
+      var total = subtotal - discountAmount;
+
+      if (amountEl) amountEl.textContent = '$' + Math.round(total);
+      if (noteEl) {
+        var serviceName = serviceSelect.options[serviceSelect.selectedIndex].text.split(' — ')[0];
+        noteEl.textContent = 'for ~' + hours + ' hours of ' + serviceName;
+      }
+    }
+
+    if (serviceSelect) serviceSelect.addEventListener('change', calculatePrice);
+    if (sizeSelect) sizeSelect.addEventListener('change', calculatePrice);
+    if (frequencySelect) frequencySelect.addEventListener('change', calculatePrice);
+
+    // Initial calculation
+    calculatePrice();
+  })();
 
 })();
