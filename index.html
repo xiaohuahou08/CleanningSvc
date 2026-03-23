@@ -19,6 +19,7 @@
       <nav>
         <ul class="nav-links" id="nav-links">
           <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
           <li><a href="#why-us">Why Us</a></li>
           <li><a href="#testimonials">Reviews</a></li>
           <li><a href="#booking" class="btn btn-nav">Book Now</a></li>
@@ -140,6 +141,112 @@
           </ul>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PRICING CALCULATOR ====== -->
+  <section class="pricing section-pad" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Transparent Pricing</h2>
+      <p class="section-sub">Know your cost upfront. No hidden fees, no surprises.</p>
+
+      <!-- Instant Quote Calculator -->
+      <div class="calculator-card">
+        <h3>✨ Get an Instant Quote</h3>
+        <div class="calculator-form">
+          <div class="calc-row">
+            <div class="calc-group">
+              <label for="calc-service">Service Type</label>
+              <select id="calc-service">
+                <option value="residential" data-price="40">Residential Cleaning — $40/hr</option>
+                <option value="deep" data-price="65" selected>Deep Cleaning — $65/hr ⭐</option>
+                <option value="commercial" data-price="55">Commercial Cleaning — $55/hr</option>
+                <option value="move" data-price="65">Move-In / Move-Out — $65/hr</option>
+                <option value="event" data-price="60">Post-Event Cleaning — $60/hr</option>
+                <option value="eco" data-price="45">Eco-Friendly — $45/hr</option>
+              </select>
+            </div>
+            <div class="calc-group">
+              <label for="calc-size">Space Size</label>
+              <select id="calc-size">
+                <option value="studio" data-hours="2">Studio — ~2 hours</option>
+                <option value="1br" data-hours="3" selected>1 Bedroom — ~3 hours</option>
+                <option value="2br" data-hours="4">2 Bedrooms — ~4 hours</option>
+                <option value="3br" data-hours="5">3 Bedrooms — ~5 hours</option>
+                <option value="4br+" data-hours="6">4+ Bedrooms — ~6 hours</option>
+                <option value="office" data-hours="4">Office Space — varies</option>
+              </select>
+            </div>
+          </div>
+          <div class="calc-row">
+            <div class="calc-group">
+              <label for="calc-frequency">Frequency</label>
+              <select id="calc-frequency">
+                <option value="one-time" data-discount="0">One-Time</option>
+                <option value="weekly" data-discount="15">Weekly — Save 15%</option>
+                <option value="biweekly" data-discount="10">Bi-Weekly — Save 10%</option>
+                <option value="monthly" data-discount="5">Monthly — Save 5%</option>
+              </select>
+            </div>
+            <div class="calc-group">
+              <label>Estimated Total</label>
+              <div class="calc-result" id="calc-result">
+                <span class="calc-amount" id="calc-amount">$195</span>
+                <span class="calc-note" id="calc-note">for ~3 hours</span>
+              </div>
+            </div>
+          </div>
+          <p class="calc-disclaimer">
+            * Final price may vary based on actual space conditions. Free on-site estimate available.
+          </p>
+          <a href="#booking" class="btn btn-primary btn-calc">Book at This Price →</a>
+        </div>
+      </div>
+
+      <!-- Simple Price Table -->
+      <div class="price-table">
+        <h3>Our Services at a Glance</h3>
+        <div class="price-grid">
+          <div class="price-card">
+            <div class="price-icon">🏠</div>
+            <h4>Residential</h4>
+            <div class="price-amount"><span>$40</span>/hr</div>
+            <p>Regular maintenance cleaning for apartments & condos</p>
+          </div>
+          <div class="price-card featured">
+            <div class="price-badge">Most Popular</div>
+            <div class="price-icon">🌟</div>
+            <h4>Deep Cleaning</h4>
+            <div class="price-amount"><span>$65</span>/hr</div>
+            <p>Thorough top-to-bottom clean for move-ins, move-outs, or refresh</p>
+          </div>
+          <div class="price-card">
+            <div class="price-icon">🏢</div>
+            <h4>Commercial</h4>
+            <div class="price-amount"><span>$55</span>/hr</div>
+            <p>Keep your Manhattan office spotless & welcoming</p>
+          </div>
+          <div class="price-card">
+            <div class="price-icon">📦</div>
+            <h4>Move-In/Out</h4>
+            <div class="price-amount"><span>$65</span>/hr</div>
+            <p>Start fresh or leave a great impression</p>
+          </div>
+          <div class="price-card">
+            <div class="price-icon">🎉</div>
+            <h4>Post-Event</h4>
+            <div class="price-amount"><span>$60</span>/hr</div>
+            <p>Quick turnaround after your party</p>
+          </div>
+          <div class="price-card">
+            <div class="price-icon">🌿</div>
+            <h4>Eco-Friendly</h4>
+            <div class="price-amount"><span>$45</span>/hr</div>
+            <p>Non-toxic, pet-safe, environmentally friendly</p>
+          </div>
+        </div>
+        <p class="price-note">📅 <strong>Recurring discounts:</strong> Weekly 15% off | Bi-Weekly 10% off | Monthly 5% off</p>
       </div>
     </div>
   </section>
@@ -532,6 +639,7 @@
         <h4>Quick Links</h4>
         <ul>
           <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
           <li><a href="#why-us">Why Us</a></li>
           <li><a href="#testimonials">Reviews</a></li>
           <li><a href="#booking">Book Now</a></li>
@@ -555,6 +663,22 @@
       </div>
     </div>
   </footer>
+
+  <!-- ====== FLOATING CONTACT BUTTONS ====== -->
+  <div class="floating-buttons">
+    <a href="tel:+12125550100" class="float-btn float-phone" aria-label="Call us">
+      <span class="float-icon">📞</span>
+      <span class="float-label">Call</span>
+    </a>
+    <a href="https://wa.me/12125550100?text=Hi%2C%20I%27d%20like%20to%20book%20a%20cleaning%20service" target="_blank" rel="noopener" class="float-btn float-whatsapp" aria-label="WhatsApp us">
+      <span class="float-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </span>
+      <span class="float-label">WhatsApp</span>
+    </a>
+  </div>
 
   <!-- EmailJS SDK for sending booking notifications -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
