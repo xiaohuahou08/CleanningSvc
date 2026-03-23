@@ -2,14 +2,7 @@
    Sparkling Clean NYC – Main JS (with Pricing Calculator & i18n)
    ========================================= */
 
-/* ---- EmailJS Configuration ----
-   Sign up at https://www.emailjs.com, create a Gmail service connected to
-   xiaohua.hou@gmail.com, and create an email template. In the template, set
-   the "To Email" field to xiaohua.hou@gmail.com (server-side, NOT via a
-   template variable). Then fill in the three values below.
-   Template variables used: from_name, from_email, phone, address,
-   service_type, preferred_date, preferred_time, size, frequency, notes.
-*/
+/* ---- EmailJS Configuration ---- */
 var EMAILJS_PUBLIC_KEY  = 'sbYh5z7wSyFlh87ye';
 var EMAILJS_SERVICE_ID  = 'service_jelcpx6';
 var EMAILJS_TEMPLATE_ID = 'template_imled2u';
@@ -112,7 +105,7 @@ var EMAILJS_TEMPLATE_ID = 'template_imled2u';
   if (typeof emailjs !== 'undefined') {
     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
   } else {
-    console.warn('EmailJS failed to load. Booking emails will not be sent.');
+    console.warn('EmailJS failed to load.');
   }
 
   /* ---- Mobile Nav ---- */
@@ -126,7 +119,6 @@ var EMAILJS_TEMPLATE_ID = 'template_imled2u';
       hamburger.setAttribute('aria-expanded', String(isOpen));
     });
 
-    // Close menu when a nav link is clicked
     navLinks.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         navLinks.classList.remove('open');
@@ -136,7 +128,7 @@ var EMAILJS_TEMPLATE_ID = 'template_imled2u';
     });
   }
 
-  /* ---- Set min date on date picker to today ---- */
+  /* ---- Set min date on date picker ---- */
   var dateInput = document.getElementById('date');
   if (dateInput) {
     var today = new Date();
@@ -154,11 +146,6 @@ var EMAILJS_TEMPLATE_ID = 'template_imled2u';
 
   if (!form) return;
 
-  /**
-   * Validate a single field. Returns true if valid.
-   * @param {HTMLElement} field
-   * @returns {boolean}
-   */
   function validateField(field) {
     var errorEl = document.getElementById(field.id + '-error');
     var value = field.value.trim();
@@ -169,14 +156,12 @@ var EMAILJS_TEMPLATE_ID = 'template_imled2u';
       valid = false;
       message = 'This field is required.';
     } else if (field.type === 'email' && value !== '') {
-      // Require local-part @ subdomain(s) . tld (each part at least 1 char)
       var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@.]{2,}$/;
       if (!emailPattern.test(value)) {
         valid = false;
         message = 'Please enter a valid email address.';
       }
     } else if (field.type === 'tel' && value !== '') {
-      // Must start with optional '+' then digits, and contain at least 7 digits total
       var phonePattern = /^\+?[\d\s\-().]{7,20}$/;
       var digitCount = (value.match(/\d/g) || []).length;
       if (!phonePattern.test(value) || digitCount < 7) {
@@ -200,26 +185,17 @@ var EMAILJS_TEMPLATE_ID = 'template_imled2u';
       field.classList.add('invalid');
       if (errorEl) errorEl.textContent = message;
     }
-
     return valid;
   }
 
-  // Live validation on blur
   var requiredFields = form.querySelectorAll('[required]');
   requiredFields.forEach(function (field) {
-    field.addEventListener('blur', function () {
-      validateField(field);
-    });
+    field.addEventListener('blur', function () { validateField(field); });
     field.addEventListener('input', function () {
-      if (field.classList.contains('invalid')) {
-        validateField(field);
-      }
+      if (field.classList.contains('invalid')) { validateField(field); }
     });
   });
 
-  /**
-   * Collect form data into a plain object.
-   */
   function collectFormData() {
     var data = {};
     var elements = form.elements;
@@ -232,17 +208,9 @@ var EMAILJS_TEMPLATE_ID = 'template_imled2u';
     return data;
   }
 
-  /**
-   * Send booking data to xiaohua.hou@gmail.com via EmailJS.
-   * NOTE: Configure the recipient address (xiaohua.hou@gmail.com) inside the
-   * EmailJS template on the dashboard – do NOT pass it as a template variable
-   * to prevent client-side manipulation of the destination address.
-   * @param {Object} data - Collected form data
-   * @returns {Promise}
-   */
   function submitBooking(data) {
     if (typeof emailjs === 'undefined') {
-      return Promise.reject(new Error('EmailJS is not available. Please check your internet connection and try again.'));
+      return Promise.reject(new Error('EmailJS not available.'));
     }
     var templateParams = {
       from_name:      data.firstName + ' ' + data.lastName,
@@ -262,16 +230,12 @@ var EMAILJS_TEMPLATE_ID = 'template_imled2u';
   form.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    // Validate all required fields
     var allValid = true;
     requiredFields.forEach(function (field) {
-      if (!validateField(field)) {
-        allValid = false;
-      }
+      if (!validateField(field)) { allValid = false; }
     });
 
     if (!allValid) {
-      // Scroll to the first invalid field
       var firstInvalid = form.querySelector('.invalid');
       if (firstInvalid) {
         firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -280,7 +244,6 @@ var EMAILJS_TEMPLATE_ID = 'template_imled2u';
       return;
     }
 
-    // Show loading state
     btnText.classList.add('hidden');
     btnLoading.classList.remove('hidden');
     form.querySelector('button[type="submit"]').disabled = true;
@@ -288,13 +251,11 @@ var EMAILJS_TEMPLATE_ID = 'template_imled2u';
     var bookingData = collectFormData();
 
     submitBooking(bookingData).then(function () {
-      // Hide form, show success banner
       form.classList.add('hidden');
       successBanner.classList.remove('hidden');
       successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }).catch(function (err) {
       console.error('Booking submission error:', err);
-      // Re-enable button on error
       btnText.classList.remove('hidden');
       btnLoading.classList.add('hidden');
       form.querySelector('button[type="submit"]').disabled = false;
@@ -322,7 +283,7 @@ var EMAILJS_TEMPLATE_ID = 'template_imled2u';
 
       if (amountEl) amountEl.textContent = '$' + Math.round(total);
       if (noteEl) {
-        var serviceName = serviceSelect.options[serviceSelect.selectedIndex].text.split(' — ')[0];
+        var serviceName = serviceSelect.options[serviceSelect.selectedIndex].text.split(' - ')[0];
         noteEl.textContent = 'for ~' + hours + ' hours of ' + serviceName;
       }
     }
@@ -331,50 +292,32 @@ var EMAILJS_TEMPLATE_ID = 'template_imled2u';
     if (sizeSelect) sizeSelect.addEventListener('change', calculatePrice);
     if (frequencySelect) frequencySelect.addEventListener('change', calculatePrice);
 
-    // Initial calculation
     calculatePrice();
-  
-  /* ---- FAQ Accordion ---- */
-  document.querySelectorAll('.faq-question').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var item = this.closest('.faq-item');
-      var isOpen = item.classList.contains('open');
-      
-      // Close all other items
-      document.querySelectorAll('.faq-item').forEach(function(i) {
-        i.classList.remove('open');
-        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-      });
-      
-      // Toggle current item
-      if (!isOpen) {
-        item.classList.add('open');
-        this.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
-
-})();
-
+  })();
 
   /* ---- FAQ Accordion ---- */
-  document.querySelectorAll('.faq-question').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var item = this.closest('.faq-item');
-      var isOpen = item.classList.contains('open');
-      
-      // Close all other items
-      document.querySelectorAll('.faq-item').forEach(function(i) {
-        i.classList.remove('open');
-        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+  (function() {
+    var faqButtons = document.querySelectorAll('.faq-question');
+    
+    faqButtons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        
+        // Close all items first
+        document.querySelectorAll('.faq-item').forEach(function(i) {
+          i.classList.remove('open');
+          var q = i.querySelector('.faq-question');
+          if (q) q.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Open clicked item if it was closed
+        if (!isOpen) {
+          item.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        }
       });
-      
-      // Toggle current item
-      if (!isOpen) {
-        item.classList.add('open');
-        this.setAttribute('aria-expanded', 'true');
-      }
     });
-  });
+  })();
 
 })();
