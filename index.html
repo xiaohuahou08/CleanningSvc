@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sparkling Clean NYC – Professional residential and commercial cleaning services in Manhattan, New York. Book online today!" />
+  <meta name="description" content="Sparkling Clean NYC – Professional residential and commercial cleaning services in Manhattan, New York. Book online today!" data-i18n-content="meta.description" />
   <title>Sparkling Clean NYC | Manhattan Cleaning Service</title>
   <link rel="stylesheet" href="css/styles.css" />
   <!-- Google Fonts -->
@@ -18,12 +18,17 @@
       <a class="logo" href="#top">✨ Sparkling Clean NYC</a>
       <nav>
         <ul class="nav-links" id="nav-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#why-us">Why Us</a></li>
-          <li><a href="#testimonials">Reviews</a></li>
-          <li><a href="#booking" class="btn btn-nav">Book Now</a></li>
+          <li><a href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="#why-us" data-i18n="nav.whyUs">Why Us</a></li>
+          <li><a href="#testimonials" data-i18n="nav.reviews">Reviews</a></li>
+          <li><a href="#booking" class="btn btn-nav" data-i18n="nav.bookNow">Book Now</a></li>
+          <li class="lang-switcher">
+            <button id="lang-toggle" class="lang-btn" aria-label="Switch language">
+              <span id="lang-text">ES</span>
+            </button>
+          </li>
         </ul>
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -36,12 +41,12 @@
   <section class="hero" id="hero">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-      <p class="hero-tag">Manhattan's #1 Trusted Cleaning Service</p>
-      <h1>A Spotless Home<br />in the Heart of NYC</h1>
-      <p class="hero-sub">We bring sparkling clean to your apartment, condo, or office – so you can enjoy every moment in the city that never sleeps.</p>
+      <p class="hero-tag" data-i18n="hero.tag">Manhattan's #1 Trusted Cleaning Service</p>
+      <h1 data-i18n="hero.title">A Spotless Home<br />in the Heart of NYC</h1>
+      <p class="hero-sub" data-i18n="hero.subtitle">We bring sparkling clean to your apartment, condo, or office – so you can enjoy every moment in the city that never sleeps.</p>
       <div class="hero-cta">
-        <a href="#booking" class="btn btn-primary">Book a Cleaning</a>
-        <a href="#services" class="btn btn-outline">Our Services</a>
+        <a href="#booking" class="btn btn-primary" data-i18n="hero.bookBtn">Book a Cleaning</a>
+        <a href="#services" class="btn btn-outline" data-i18n="hero.servicesBtn">Our Services</a>
       </div>
     </div>
   </section>
@@ -51,19 +56,19 @@
     <div class="container stats-grid">
       <div class="stat-item">
         <span class="stat-number">500+</span>
-        <span class="stat-label">Happy Clients</span>
+        <span class="stat-label" data-i18n="stats.clients">Happy Clients</span>
       </div>
       <div class="stat-item">
         <span class="stat-number">5★</span>
-        <span class="stat-label">Average Rating</span>
+        <span class="stat-label" data-i18n="stats.rating">Average Rating</span>
       </div>
       <div class="stat-item">
         <span class="stat-number">3+</span>
-        <span class="stat-label">Years in Manhattan</span>
+        <span class="stat-label" data-i18n="stats.years">Years in Manhattan</span>
       </div>
       <div class="stat-item">
         <span class="stat-number">100%</span>
-        <span class="stat-label">Satisfaction Guarantee</span>
+        <span class="stat-label" data-i18n="stats.guarantee">Satisfaction Guarantee</span>
       </div>
     </div>
   </section>
@@ -71,74 +76,74 @@
   <!-- ====== SERVICES ====== -->
   <section class="services section-pad" id="services">
     <div class="container">
-      <h2 class="section-title">Our Services</h2>
-      <p class="section-sub">Professional cleaning tailored to Manhattan living.</p>
+      <h2 class="section-title" data-i18n="services.title">Our Services</h2>
+      <p class="section-sub" data-i18n="services.subtitle">Professional cleaning tailored to Manhattan living.</p>
       <div class="services-grid">
 
         <div class="service-card">
           <div class="service-icon">🏠</div>
-          <h3>Residential Cleaning</h3>
-          <p>Regular or one-time cleaning for apartments, condos, and townhouses across Manhattan. We handle every room with care.</p>
+          <h3 data-i18n="services.residential.title">Residential Cleaning</h3>
+          <p data-i18n="services.residential.desc">Regular or one-time cleaning for apartments, condos, and townhouses across Manhattan. We handle every room with care.</p>
           <ul>
-            <li>Dusting &amp; vacuuming</li>
-            <li>Kitchen &amp; bathroom deep clean</li>
-            <li>Floor mopping &amp; polishing</li>
+            <li data-i18n="services.residential.item1">Dusting &amp; vacuuming</li>
+            <li data-i18n="services.residential.item2">Kitchen &amp; bathroom deep clean</li>
+            <li data-i18n="services.residential.item3">Floor mopping &amp; polishing</li>
           </ul>
         </div>
 
         <div class="service-card featured">
-          <div class="badge">Most Popular</div>
+          <div class="badge" data-i18n="services.badge">Most Popular</div>
           <div class="service-icon">🌟</div>
-          <h3>Deep Cleaning</h3>
-          <p>A thorough top-to-bottom clean for move-ins, move-outs, or when your home needs a complete refresh.</p>
+          <h3 data-i18n="services.deep.title">Deep Cleaning</h3>
+          <p data-i18n="services.deep.desc">A thorough top-to-bottom clean for move-ins, move-outs, or when your home needs a complete refresh.</p>
           <ul>
-            <li>Inside appliances &amp; cabinets</li>
-            <li>Baseboards &amp; window sills</li>
-            <li>Grout scrubbing</li>
+            <li data-i18n="services.deep.item1">Inside appliances &amp; cabinets</li>
+            <li data-i18n="services.deep.item2">Baseboards &amp; window sills</li>
+            <li data-i18n="services.deep.item3">Grout scrubbing</li>
           </ul>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🏢</div>
-          <h3>Commercial Cleaning</h3>
-          <p>Keep your Manhattan office or retail space spotless and welcoming for employees and customers alike.</p>
+          <h3 data-i18n="services.commercial.title">Commercial Cleaning</h3>
+          <p data-i18n="services.commercial.desc">Keep your Manhattan office or retail space spotless and welcoming for employees and customers alike.</p>
           <ul>
-            <li>Daily or weekly schedules</li>
-            <li>Common areas &amp; conference rooms</li>
-            <li>Restroom sanitizing</li>
+            <li data-i18n="services.commercial.item1">Daily or weekly schedules</li>
+            <li data-i18n="services.commercial.item2">Common areas &amp; conference rooms</li>
+            <li data-i18n="services.commercial.item3">Restroom sanitizing</li>
           </ul>
         </div>
 
         <div class="service-card">
           <div class="service-icon">📦</div>
-          <h3>Move-In / Move-Out</h3>
-          <p>Start fresh or leave a great impression. We ensure every inch is spotless before you hand back the keys.</p>
+          <h3 data-i18n="services.move.title">Move-In / Move-Out</h3>
+          <p data-i18n="services.move.desc">Start fresh or leave a great impression. We ensure every inch is spotless before you hand back the keys.</p>
           <ul>
-            <li>Full property clean</li>
-            <li>Inside closets &amp; storage</li>
-            <li>Window interior cleaning</li>
+            <li data-i18n="services.move.item1">Full property clean</li>
+            <li data-i18n="services.move.item2">Inside closets &amp; storage</li>
+            <li data-i18n="services.move.item3">Window interior cleaning</li>
           </ul>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🎉</div>
-          <h3>Post-Event Cleaning</h3>
-          <p>Hosted a party in your Manhattan space? Let us handle the aftermath so you don't have to.</p>
+          <h3 data-i18n="services.event.title">Post-Event Cleaning</h3>
+          <p data-i18n="services.event.desc">Hosted a party in your Manhattan space? Let us handle the aftermath so you don't have to.</p>
           <ul>
-            <li>Trash removal</li>
-            <li>Stain treatment</li>
-            <li>Quick turnaround</li>
+            <li data-i18n="services.event.item1">Trash removal</li>
+            <li data-i18n="services.event.item2">Stain treatment</li>
+            <li data-i18n="services.event.item3">Quick turnaround</li>
           </ul>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🌿</div>
-          <h3>Eco-Friendly Cleaning</h3>
-          <p>Non-toxic, pet-safe, and environmentally friendly products – perfect for families who care about the planet.</p>
+          <h3 data-i18n="services.eco.title">Eco-Friendly Cleaning</h3>
+          <p data-i18n="services.eco.desc">Non-toxic, pet-safe, and environmentally friendly products – perfect for families who care about the planet.</p>
           <ul>
-            <li>Green-certified products</li>
-            <li>Safe for kids &amp; pets</li>
-            <li>Reduced chemical use</li>
+            <li data-i18n="services.eco.item1">Green-certified products</li>
+            <li data-i18n="services.eco.item2">Safe for kids &amp; pets</li>
+            <li data-i18n="services.eco.item3">Reduced chemical use</li>
           </ul>
         </div>
 
@@ -149,65 +154,65 @@
   <!-- ====== PRICING CALCULATOR ====== -->
   <section class="pricing section-pad" id="pricing">
     <div class="container">
-      <h2 class="section-title">Transparent Pricing</h2>
-      <p class="section-sub">Know your cost upfront. No hidden fees, no surprises.</p>
+      <h2 class="section-title" data-i18n="pricing.title">Transparent Pricing</h2>
+      <p class="section-sub" data-i18n="pricing.subtitle">Know your cost upfront. No hidden fees, no surprises.</p>
 
       <!-- Instant Quote Calculator -->
       <div class="calculator-card">
-        <h3>✨ Get an Instant Quote</h3>
+        <h3 data-i18n="pricing.calc.title">✨ Get an Instant Quote</h3>
         <div class="calculator-form">
           <div class="calc-row">
             <div class="calc-group">
-              <label for="calc-service">Service Type</label>
+              <label for="calc-service" data-i18n="pricing.calc.serviceType">Service Type</label>
               <select id="calc-service">
-                <option value="residential" data-price="40">Residential Cleaning — $40/hr</option>
-                <option value="deep" data-price="65" selected>Deep Cleaning — $65/hr ⭐</option>
-                <option value="commercial" data-price="55">Commercial Cleaning — $55/hr</option>
-                <option value="move" data-price="65">Move-In / Move-Out — $65/hr</option>
-                <option value="event" data-price="60">Post-Event Cleaning — $60/hr</option>
-                <option value="eco" data-price="45">Eco-Friendly — $45/hr</option>
+                <option value="residential" data-price="40" data-i18n="pricing.calc.residential">Residential Cleaning — $40/hr</option>
+                <option value="deep" data-price="65" selected data-i18n="pricing.calc.deep">Deep Cleaning — $65/hr ⭐</option>
+                <option value="commercial" data-price="55" data-i18n="pricing.calc.commercial">Commercial Cleaning — $55/hr</option>
+                <option value="move" data-price="65" data-i18n="pricing.calc.move">Move-In / Move-Out — $65/hr</option>
+                <option value="event" data-price="60" data-i18n="pricing.calc.event">Post-Event Cleaning — $60/hr</option>
+                <option value="eco" data-price="45" data-i18n="pricing.calc.eco">Eco-Friendly — $45/hr</option>
               </select>
             </div>
             <div class="calc-group">
-              <label for="calc-size">Space Size</label>
+              <label for="calc-size" data-i18n="pricing.calc.spaceSize">Space Size</label>
               <select id="calc-size">
-                <option value="studio" data-hours="2">Studio — ~2 hours</option>
-                <option value="1br" data-hours="3" selected>1 Bedroom — ~3 hours</option>
-                <option value="2br" data-hours="4">2 Bedrooms — ~4 hours</option>
-                <option value="3br" data-hours="5">3 Bedrooms — ~5 hours</option>
-                <option value="4br+" data-hours="6">4+ Bedrooms — ~6 hours</option>
-                <option value="office" data-hours="4">Office Space — varies</option>
+                <option value="studio" data-hours="2" data-i18n="pricing.calc.studio">Studio — ~2 hours</option>
+                <option value="1br" data-hours="3" selected data-i18n="pricing.calc.1br">1 Bedroom — ~3 hours</option>
+                <option value="2br" data-hours="4" data-i18n="pricing.calc.2br">2 Bedrooms — ~4 hours</option>
+                <option value="3br" data-hours="5" data-i18n="pricing.calc.3br">3 Bedrooms — ~5 hours</option>
+                <option value="4br+" data-hours="6" data-i18n="pricing.calc.4br">4+ Bedrooms — ~6 hours</option>
+                <option value="office" data-hours="4" data-i18n="pricing.calc.office">Office Space — varies</option>
               </select>
             </div>
           </div>
           <div class="calc-row">
             <div class="calc-group">
-              <label for="calc-frequency">Frequency</label>
+              <label for="calc-frequency" data-i18n="pricing.calc.frequency">Frequency</label>
               <select id="calc-frequency">
-                <option value="one-time" data-discount="0">One-Time</option>
-                <option value="weekly" data-discount="15">Weekly — Save 15%</option>
-                <option value="biweekly" data-discount="10">Bi-Weekly — Save 10%</option>
-                <option value="monthly" data-discount="5">Monthly — Save 5%</option>
+                <option value="one-time" data-discount="0" data-i18n="pricing.calc.oneTime">One-Time</option>
+                <option value="weekly" data-discount="15" data-i18n="pricing.calc.weekly">Weekly — Save 15%</option>
+                <option value="biweekly" data-discount="10" data-i18n="pricing.calc.biweekly">Bi-Weekly — Save 10%</option>
+                <option value="monthly" data-discount="5" data-i18n="pricing.calc.monthly">Monthly — Save 5%</option>
               </select>
             </div>
             <div class="calc-group">
-              <label>Estimated Total</label>
+              <label data-i18n="pricing.calc.estimatedTotal">Estimated Total</label>
               <div class="calc-result" id="calc-result">
                 <span class="calc-amount" id="calc-amount">$195</span>
                 <span class="calc-note" id="calc-note">for ~3 hours</span>
               </div>
             </div>
           </div>
-          <p class="calc-disclaimer">
+          <p class="calc-disclaimer" data-i18n="pricing.calc.disclaimer">
             * Final price may vary based on actual space conditions. Free on-site estimate available.
           </p>
-          <a href="#booking" class="btn btn-primary btn-calc">Book at This Price →</a>
+          <a href="#booking" class="btn btn-primary btn-calc" data-i18n="pricing.calc.bookBtn">Book at This Price →</a>
         </div>
       </div>
 
       <!-- Simple Price Table -->
       <div class="price-table">
-        <h3>Our Services at a Glance</h3>
+        <h3 data-i18n="pricing.table.title">Our Services at a Glance</h3>
         <div class="price-grid">
           <div class="price-card">
             <div class="price-icon">🏠</div>
@@ -247,7 +252,7 @@
             <p>Non-toxic, pet-safe, environmentally friendly</p>
           </div>
         </div>
-        <p class="price-note">📅 <strong>Recurring discounts:</strong> Weekly 15% off | Bi-Weekly 10% off | Monthly 5% off</p>
+        <p class="price-note"><span data-i18n="pricing.table.discounts">📅 <strong>Recurring discounts:</strong> Weekly 15% off | Bi-Weekly 10% off | Monthly 5% off</span></p>
       </div>
     </div>
   </section>
@@ -256,35 +261,35 @@
   <section class="why-us section-pad" id="why-us">
     <div class="container why-grid">
       <div class="why-text">
-        <h2 class="section-title left">Why Choose Us?</h2>
-        <p class="section-sub left">We're not just cleaners – we're your trusted partners in creating a comfortable, healthy home in the middle of the busiest city in the world.</p>
+        <h2 class="section-title left" data-i18n="whyUs.title">Why Choose Us?</h2>
+        <p class="section-sub left" data-i18n="whyUs.subtitle">We're not just cleaners – we're your trusted partners in creating a comfortable, healthy home in the middle of the busiest city in the world.</p>
         <div class="feature-list">
           <div class="feature">
             <span class="feature-icon">✅</span>
             <div>
-              <h4>Vetted &amp; Insured Professionals</h4>
-              <p>Every cleaner is background-checked, trained, and fully insured for your peace of mind.</p>
+              <h4 data-i18n="whyUs.feature1.title">Vetted &amp; Insured Professionals</h4>
+              <p data-i18n="whyUs.feature1.desc">Every cleaner is background-checked, trained, and fully insured for your peace of mind.</p>
             </div>
           </div>
           <div class="feature">
             <span class="feature-icon">📅</span>
             <div>
-              <h4>Flexible Scheduling</h4>
-              <p>Morning, afternoon, or evening – we work around your NYC schedule, including weekends.</p>
+              <h4 data-i18n="whyUs.feature2.title">Flexible Scheduling</h4>
+              <p data-i18n="whyUs.feature2.desc">Morning, afternoon, or evening – we work around your NYC schedule, including weekends.</p>
             </div>
           </div>
           <div class="feature">
             <span class="feature-icon">💳</span>
             <div>
-              <h4>Transparent Pricing</h4>
-              <p>No hidden fees. Get an instant quote when you fill out our booking form.</p>
+              <h4 data-i18n="whyUs.feature3.title">Transparent Pricing</h4>
+              <p data-i18n="whyUs.feature3.desc">No hidden fees. Get an instant quote when you fill out our booking form.</p>
             </div>
           </div>
           <div class="feature">
             <span class="feature-icon">🔁</span>
             <div>
-              <h4>Satisfaction Guarantee</h4>
-              <p>Not happy with the result? We'll come back and re-clean for free – no questions asked.</p>
+              <h4 data-i18n="whyUs.feature4.title">Satisfaction Guarantee</h4>
+              <p data-i18n="whyUs.feature4.desc">Not happy with the result? We'll come back and re-clean for free – no questions asked.</p>
             </div>
           </div>
         </div>
@@ -302,8 +307,8 @@
   <!-- ====== FAQ ====== -->
   <section class="faq section-pad" id="faq">
     <div class="container">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <p class="section-sub">Everything you need to know about our cleaning services.</p>
+      <h2 class="section-title" data-i18n="faq.title">Frequently Asked Questions</h2>
+      <p class="section-sub" data-i18n="faq.subtitle">Everything you need to know about our cleaning services.</p>
       
       <div class="faq-container">
         <div class="faq-item">
@@ -412,8 +417,8 @@
 <!-- ====== TESTIMONIALS ====== -->
   <section class="testimonials section-pad" id="testimonials">
     <div class="container">
-      <h2 class="section-title">What Our Clients Say</h2>
-      <p class="section-sub">Real reviews from real Manhattan residents.</p>
+      <h2 class="section-title" data-i18n="testimonials.title">What Our Clients Say</h2>
+      <p class="section-sub" data-i18n="testimonials.subtitle">Real reviews from real Manhattan residents.</p>
     </div>
     <div class="testimonials-slider-wrapper">
       <div class="testimonials-track">
@@ -618,60 +623,60 @@
   <!-- ====== BOOKING FORM ====== -->
   <section class="booking section-pad" id="booking">
     <div class="container">
-      <h2 class="section-title">Book Your Cleaning</h2>
-      <p class="section-sub">Fill out the form below and we'll confirm your appointment within 24 hours.</p>
+      <h2 class="section-title" data-i18n="booking.title">Book Your Cleaning</h2>
+      <p class="section-sub" data-i18n="booking.subtitle">Fill out the form below and we'll confirm your appointment within 24 hours.</p>
 
       <div id="booking-success" class="booking-success hidden" role="alert">
         <span class="success-icon">🎉</span>
         <div>
-          <strong>Booking Request Received!</strong>
-          <p>Thank you! We'll reach out within 24 hours to confirm your appointment.</p>
+          <strong data-i18n="booking.success.title">Booking Request Received!</strong>
+          <p data-i18n="booking.success.message">Thank you! We'll reach out within 24 hours to confirm your appointment.</p>
         </div>
       </div>
 
-      <form class="booking-form" id="booking-form" novalidate>
+      <form class="booking-form" id="booking-form" novalidate">
         <div class="form-row">
           <div class="form-group">
-            <label for="first-name">First Name <span class="required">*</span></label>
-            <input type="text" id="first-name" name="firstName" placeholder="Jane" required />
+            <label for="first-name"><span data-i18n="booking.form.firstName">First Name</span> <span class="required">*</span></label>
+            <input type="text" id="first-name" name="firstName" placeholder="Jane" data-i18n-placeholder="booking.form.firstNamePlaceholder" required />
             <span class="error-msg" id="first-name-error"></span>
           </div>
           <div class="form-group">
-            <label for="last-name">Last Name <span class="required">*</span></label>
-            <input type="text" id="last-name" name="lastName" placeholder="Smith" required />
+            <label for="last-name"><span data-i18n="booking.form.lastName">Last Name</span> <span class="required">*</span></label>
+            <input type="text" id="last-name" name="lastName" placeholder="Smith" data-i18n-placeholder="booking.form.lastNamePlaceholder" required />
             <span class="error-msg" id="last-name-error"></span>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label for="email">Email Address <span class="required">*</span></label>
-            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+            <label for="email"><span data-i18n="booking.form.email">Email Address</span> <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" data-i18n-placeholder="booking.form.emailPlaceholder" required />
             <span class="error-msg" id="email-error"></span>
           </div>
           <div class="form-group">
-            <label for="phone">Phone Number <span class="required">*</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="(212) 555-0100" required />
+            <label for="phone"><span data-i18n="booking.form.phone">Phone Number</span> <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="(212) 555-0100" data-i18n-placeholder="booking.form.phonePlaceholder" required />
             <span class="error-msg" id="phone-error"></span>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label for="address">Manhattan Address <span class="required">*</span></label>
-            <input type="text" id="address" name="address" placeholder="123 W 57th St, New York, NY 10019" required />
+            <label for="address"><span data-i18n="booking.form.address">Manhattan Address</span> <span class="required">*</span></label>
+            <input type="text" id="address" name="address" placeholder="123 W 57th St, New York, NY 10019" data-i18n-placeholder="booking.form.addressPlaceholder" required />
             <span class="error-msg" id="address-error"></span>
           </div>
           <div class="form-group">
-            <label for="service-type">Service Type <span class="required">*</span></label>
+            <label for="service-type"><span data-i18n="booking.form.serviceType">Service Type</span> <span class="required">*</span></label>
             <select id="service-type" name="serviceType" required>
-              <option value="">Select a service…</option>
-              <option value="residential">Residential Cleaning</option>
-              <option value="deep">Deep Cleaning</option>
-              <option value="commercial">Commercial Cleaning</option>
-              <option value="move">Move-In / Move-Out</option>
-              <option value="event">Post-Event Cleaning</option>
-              <option value="eco">Eco-Friendly Cleaning</option>
+              <option value="" data-i18n="booking.form.selectService">Select a service…</option>
+              <option value="residential" data-i18n="booking.form.residential">Residential Cleaning</option>
+              <option value="deep" data-i18n="booking.form.deep">Deep Cleaning</option>
+              <option value="commercial" data-i18n="booking.form.commercial">Commercial Cleaning</option>
+              <option value="move" data-i18n="booking.form.move">Move-In / Move-Out</option>
+              <option value="event" data-i18n="booking.form.event">Post-Event Cleaning</option>
+              <option value="eco" data-i18n="booking.form.eco">Eco-Friendly Cleaning</option>
             </select>
             <span class="error-msg" id="service-type-error"></span>
           </div>
@@ -679,14 +684,14 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label for="date">Preferred Date <span class="required">*</span></label>
+            <label for="date"><span data-i18n="booking.form.date">Preferred Date</span> <span class="required">*</span></label>
             <input type="date" id="date" name="date" required />
             <span class="error-msg" id="date-error"></span>
           </div>
           <div class="form-group">
-            <label for="time">Preferred Time <span class="required">*</span></label>
+            <label for="time"><span data-i18n="booking.form.time">Preferred Time</span> <span class="required">*</span></label>
             <select id="time" name="time" required>
-              <option value="">Select a time…</option>
+              <option value="" data-i18n="booking.form.selectTime">Select a time…</option>
               <option value="8am">8:00 AM</option>
               <option value="10am">10:00 AM</option>
               <option value="12pm">12:00 PM</option>
@@ -700,37 +705,37 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label for="size">Apartment/Space Size</label>
+            <label for="size" data-i18n="booking.form.size">Apartment/Space Size</label>
             <select id="size" name="size">
-              <option value="">Select size…</option>
-              <option value="studio">Studio</option>
-              <option value="1br">1 Bedroom</option>
-              <option value="2br">2 Bedrooms</option>
-              <option value="3br">3 Bedrooms</option>
-              <option value="4br+">4+ Bedrooms</option>
-              <option value="office">Office Space</option>
+              <option value="" data-i18n="booking.form.selectSize">Select size…</option>
+              <option value="studio" data-i18n="booking.form.studio">Studio</option>
+              <option value="1br" data-i18n="booking.form.1br">1 Bedroom</option>
+              <option value="2br" data-i18n="booking.form.2br">2 Bedrooms</option>
+              <option value="3br" data-i18n="booking.form.3br">3 Bedrooms</option>
+              <option value="4br+" data-i18n="booking.form.4br">4+ Bedrooms</option>
+              <option value="office" data-i18n="booking.form.office">Office Space</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="frequency">Cleaning Frequency</label>
+            <label for="frequency" data-i18n="booking.form.frequency">Cleaning Frequency</label>
             <select id="frequency" name="frequency">
-              <option value="">Select frequency…</option>
-              <option value="one-time">One-Time</option>
-              <option value="weekly">Weekly</option>
-              <option value="biweekly">Bi-Weekly</option>
-              <option value="monthly">Monthly</option>
+              <option value="" data-i18n="booking.form.selectFrequency">Select frequency…</option>
+              <option value="one-time" data-i18n="booking.form.oneTime">One-Time</option>
+              <option value="weekly" data-i18n="booking.form.weekly">Weekly</option>
+              <option value="biweekly" data-i18n="booking.form.biweekly">Bi-Weekly</option>
+              <option value="monthly" data-i18n="booking.form.monthly">Monthly</option>
             </select>
           </div>
         </div>
 
         <div class="form-group full-width">
-          <label for="notes">Special Instructions or Notes</label>
-          <textarea id="notes" name="notes" rows="4" placeholder="e.g., I have a dog, please focus on the kitchen, building doorman code is…"></textarea>
+          <label for="notes" data-i18n="booking.form.notes">Special Instructions or Notes</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="e.g., I have a dog, please focus on the kitchen, building doorman code is…" data-i18n-placeholder="booking.form.notesPlaceholder"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary btn-submit">
-          <span id="btn-text">Request Booking</span>
-          <span id="btn-loading" class="hidden">Sending…</span>
+          <span id="btn-text" data-i18n="booking.form.submitBtn">Request Booking</span>
+          <span id="btn-loading" class="hidden" data-i18n="booking.form.sending">Sending…</span>
         </button>
       </form>
     </div>
@@ -741,25 +746,25 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <a class="logo" href="#top">✨ Sparkling Clean NYC</a>
-        <p>Your trusted cleaning partner in Manhattan, New York City.</p>
+        <p data-i18n="footer.tagline">Your trusted cleaning partner in Manhattan, New York City.</p>
         <p class="footer-contact">
           📞 <a href="tel:+12125550100">(212) 555-0100</a><br />
           📧 <a href="mailto:hello@sparklingcleannyc.com">hello@sparklingcleannyc.com</a>
         </p>
       </div>
       <div class="footer-links">
-        <h4>Quick Links</h4>
+        <h4 data-i18n="footer.quickLinks">Quick Links</h4>
         <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#why-us">Why Us</a></li>
-          <li><a href="#testimonials">Reviews</a></li>
-          <li><a href="#booking">Book Now</a></li>
+          <li><a href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="#why-us" data-i18n="nav.whyUs">Why Us</a></li>
+          <li><a href="#testimonials" data-i18n="nav.reviews">Reviews</a></li>
+          <li><a href="#booking" data-i18n="nav.bookNow">Book Now</a></li>
         </ul>
       </div>
       <div class="footer-links">
-        <h4>Service Areas</h4>
+        <h4 data-i18n="footer.serviceAreas">Service Areas</h4>
         <ul>
           <li>Midtown Manhattan</li>
           <li>Upper East &amp; West Side</li>
@@ -781,7 +786,7 @@
   <div class="floating-buttons">
     <a href="tel:+12125550100" class="float-btn float-phone" aria-label="Call us">
       <span class="float-icon">📞</span>
-      <span class="float-label">Call</span>
+      <span class="float-label" data-i18n="footer.call">Call</span>
     </a>
     <a href="https://wa.me/12125550100?text=Hi%2C%20I%27d%20like%20to%20book%20a%20cleaning%20service" target="_blank" rel="noopener" class="float-btn float-whatsapp" aria-label="WhatsApp us">
       <span class="float-icon">
@@ -789,12 +794,13 @@
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
       </span>
-      <span class="float-label">WhatsApp</span>
+      <span class="float-label" data-i18n="footer.whatsapp">WhatsApp</span>
     </a>
   </div>
 
   <!-- EmailJS SDK for sending booking notifications -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

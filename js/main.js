@@ -1,5 +1,5 @@
 /* =========================================
-   Sparkling Clean NYC - Main JS (Fixed FAQ)
+   Sparkling Clean NYC – Main JS (with Pricing Calculator & i18n)
    ========================================= */
 
 /* ---- EmailJS Configuration ---- */
@@ -10,7 +10,98 @@ var EMAILJS_TEMPLATE_ID = 'template_imled2u';
 (function () {
   'use strict';
 
-  // Initialise EmailJS with the public key
+  /* ---- Internationalization (i18n) ---- */
+  var currentLang = localStorage.getItem('language') || 'en';
+
+  function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('language', lang);
+    updatePageLanguage();
+    updateLangToggleButton();
+  }
+
+  function updatePageLanguage() {
+    var t = translations[currentLang];
+
+    // Update page title
+    if (t.meta && t.meta.title) {
+      document.title = t.meta.title;
+    }
+
+    // Update meta description
+    if (t.meta && t.meta.description) {
+      var metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute('content', t.meta.description);
+      }
+    }
+
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      var keys = key.split('.');
+      var value = t;
+
+      for (var i = 0; i < keys.length; i++) {
+        value = value[keys[i]];
+        if (!value) break;
+      }
+
+      if (value) {
+        el.innerHTML = value;
+      }
+    });
+
+    // Update placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n-placeholder');
+      var keys = key.split('.');
+      var value = t;
+
+      for (var i = 0; i < keys.length; i++) {
+        value = value[keys[i]];
+        if (!value) break;
+      }
+
+      if (value) {
+        el.setAttribute('placeholder', value);
+      }
+    });
+
+    // Update HTML lang attribute
+    document.documentElement.setAttribute('lang', currentLang);
+  }
+
+  function updateLangToggleButton() {
+    var langText = document.getElementById('lang-text');
+    if (langText) {
+      langText.textContent = currentLang === 'en' ? 'ES' : 'EN';
+    }
+  }
+
+  // Initialize language on page load
+  function initLanguage() {
+    updatePageLanguage();
+    updateLangToggleButton();
+
+    // Setup language toggle button
+    var langToggle = document.getElementById('lang-toggle');
+    if (langToggle) {
+      langToggle.addEventListener('click', function() {
+        var newLang = currentLang === 'en' ? 'es' : 'en';
+        setLanguage(newLang);
+      });
+    }
+  }
+
+  // Call initLanguage when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLanguage);
+  } else {
+    initLanguage();
+  }
+
+  /* ---- EmailJS Initialization ---- */
   if (typeof emailjs !== 'undefined') {
     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
   } else {
