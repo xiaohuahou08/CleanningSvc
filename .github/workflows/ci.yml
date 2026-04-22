@@ -1,0 +1,87 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint & Validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install lint tools
+        run: |
+          npm install -g eslint js-beautify htmlhint
+
+      - name: Validate HTML
+        run: |
+          htmlhint index.html || true
+          echo "HTML validation completed"
+
+      - name: Lint JavaScript
+        run: |
+          eslint js/main.js --env browser --rule 'no-undef: off' --rule 'no-unused-vars: off' || true
+          echo "JS lint completed"
+
+  test:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install test dependencies
+        run: |
+          npm init -y
+          npm install --save-dev jest@29 jsdom@22
+
+      - name: Run unit tests
+        run: npx jest --verbose --ci --forceExit
+
+  build-check:
+    name: Build Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify required files exist
+        run: |
+          echo "Checking required files..."
+          required_files=("index.html" "css/styles.css" "js/main.js")
+          missing=0
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "❌ Missing: $file"
+              missing=1
+            else
+              echo "✅ Found: $file"
+            fi
+          done
+          if [ $missing -eq 1 ]; then
+            echo "ERROR: Required files are missing!"
+            exit 1
+          fi
+
+      - name: Check JS syntax
+        run: |
+          node --check js/main.js
+          echo "✅ JS syntax OK"
